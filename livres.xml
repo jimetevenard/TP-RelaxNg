@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bibliotheque>
+     <!--
+    L'élément racine est <bibliotheque>, composé de 0 à plusieurs <livres>
+    
+    Le <livre> possède un attribut @isbn obligatoire (10 caractères)
+    Le <livre> possède un attribut @nombrePages optionnel (Nombre entier.)
+    Le <livre> est composé :
+    - D'un <titre> et d'un <auteur>, dans n'importe quel ordre.
+      et d'un <personnage> optionnel.
+    - Un <auteur> est composé d'un <nom>, d'un <prenom> et d'une <precision> optionnelle.
+    - Un <personnage> est composé soit :
+        - d'un <nom> et d'un <prenom>
+        - d'un <surnom>
+        
+  -->
+     <livre isbn="2253096334">
+          <titre>Les Misérables</titre>
+          <auteur>
+               <nom>Hugo</nom>
+               <prenom>Victor</prenom>
+          </auteur>
+          <personnages>
+               <personnage>
+                    <nom>Valjean</nom>
+                    <prenom>Jean</prenom>
+               </personnage>
+               <personnage>
+                    <prenom>Alfred</prenom>
+                    <nom>Javert</nom>
+               </personnage>
+               <personnage>
+                    <surnom>Gaveroche</surnom>
+               </personnage>
+          </personnages>
+     </livre>
+     <livre isbn="2013971281" nombrePages="354">
+          <titre>Les trois mousquetaires</titre>
+          <auteur>
+               <nom>Dumas</nom>
+               <prenom>Alexandre</prenom>
+               <precision>Père</precision>
+          </auteur>
+     </livre>
+     <livre isbn="207040935X">
+          <titre>Bel-Ami</titre>
+          <auteur>
+               <nom>De Maupassant</nom>
+               <prenom>Guy</prenom>
+          </auteur>
+     </livre>
+</bibliotheque>

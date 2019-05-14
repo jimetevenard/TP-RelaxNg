@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar
+     ns=""
+     xmlns="http://relaxng.org/ns/structure/1.0"
+     datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+     
+     <start>
+          <!--
+              L'élément racine est <bibliotheque>, composé de 0 à plusieurs <livres>
+    
+              Le <livre> possède un attribut @isbn obligatoire (10 caractères)
+              Le <livre> possède un attribut @nombrePages optionnel (Nombre entier.)
+              
+              Le <livre> est composé :
+               * D'un <titre> et d'un <auteur>, dans n'importe quel ordre.
+                     et d'un <personnage> optionnel.
+               * Un <auteur> est composé d'un <nom>, d'un <prenom> et d'une <precision> optionnelle.
+               * Un <personnage> est composé soit :
+                   - d'un <nom> et d'un <prenom>
+                   - d'un <surnom>
+           -->
+          <empty/>
+     </start>
+     
+     <!--
+   
+        
+  -->
+</grammar>

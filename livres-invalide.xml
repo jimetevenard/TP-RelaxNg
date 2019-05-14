@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bibliotheque>
+     <!--
+    Ce document est invalide.
+    Vérifier que votre sschema rng lève bien des erreurs.
+        
+  -->
+     <livre isbn="225309633456778899">
+          <titre>Les Misérables</titre>
+          <auteur>
+               <nom>Hugo</nom>
+               <prenom>Victor</prenom>
+          </auteur>
+          <personnages>
+               <personnage>
+                    <nom>Valjean</nom>
+                    <prenom>Jean</prenom>
+               </personnage>
+               <personnage>
+                    <prenom>Alfred</prenom>
+                    <nom>Javert</nom>
+               </personnage>
+               <personnage>
+                    <prenom>Tom</prenom>
+                    <nom>Pouce</nom>
+                    <surnom>Gaveroche</surnom>
+               </personnage>
+          </personnages>
+     </livre>
+     <livre isbn="2013971281" nombrePages="toto">
+          <titre>Les trois mousquetaires</titre>
+          <auteur>
+               <nom>Dumas</nom>
+               <prenom>Alexandre</prenom>
+               <precision>Père</precision>
+          </auteur>
+     </livre>
+     <livre>
+          <titre>Bel-Ami</titre>
+     </livre>
+</bibliotheque>

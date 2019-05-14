@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar
+     ns=""
+     xmlns="http://relaxng.org/ns/structure/1.0"
+     datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+     
+     
+     <!-- ============================== -->
+     <!-- start => la racine du document -->
+     <!-- ============================== -->
+     <start>
+          <element name="bibliotheque">
+               <zeroOrMore>
+                    <element name="livre">
+                         <ref name="livre.attributes"/>
+                         <ref name="livre.children"/>
+                    </element>
+               </zeroOrMore>
+          </element>
+     </start>
+     
+     <!-- ======================================= -->
+     <!-- Regroupement d'attributs dans un define -->
+     <!-- ======================================= -->
+     <define name="livre.attributes">
+          <attribute name="isbn">
+               <data type="string">
+                    <param name="maxLength">10</param>
+               </data>
+          </attribute>
+          <optional>
+               <attribute name="nombrePages">
+                    <data type="integer"/>
+               </attribute>
+          </optional>
+     </define>
+     
+     <!-- ======================================= -->
+     <!-- Regroupement d'élements dans un define -->
+     <!-- ======================================= -->
+     <define name="livre.children">
+          <!-- Definition directe du titre ici -->
+          <element name="titre">
+               <text/>
+          </element>
+          <!-- Definition de l'émément, mais le contenu est dans un define -->
+          <element name="auteur">
+               <ref name="auteur.content"/>
+          </element>
+          <!-- Tout l'élement dans un define -->
+          <ref name="personnages"/>
+     </define>
+     <!-- Define des personnages-->
+     <define name="personnages">
+          <zeroOrMore>
+               <element name="personnages">
+                    <zeroOrMore>
+                         <element name="personnage">
+                              <ref name="personnage.content"/>
+                         </element>
+                    </zeroOrMore>
+               </element>
+          </zeroOrMore>
+     </define>
+     
+     
+     <!-- ======================================= -->
+     <!-- ========== COMBINE Interleave ========= -->
+     <!-- ======================================= -->
+    
+     <!-- définitions du contenu de l'auteur -->
+     <define name="auteur.content" combine="interleave">
+          <ref name="typePersonne"/>
+     </define>
+     <define name="auteur.content" combine="interleave">
+          <optional>
+               <element name="precision">
+                    <text/>
+               </element>
+          </optional>
+     </define>
+     
+     
+     <!-- =============================================== -->
+     <!-- ================ COMBINE Choice =============== -->
+     <!-- =============================================== -->
+     
+     <!-- Deux definitions de personnage, avec @combine choice -->
+     <define name="personnage.content" combine="choice">
+          <ref name="typePersonne"/>
+     </define>
+     <define name="personnage.content" combine="choice">
+          <element name="surnom">
+               <text/>
+          </element>
+     </define>
+     
+     
+     
+     <!-- Define utilisé à plusieurs reprises -->
+     <define name="typePersonne">
+          <interleave>
+               <element name="nom">
+                    <text/>
+               </element>
+               <element name="prenom">
+                    <text/>
+               </element>
+          </interleave>
+     </define>
+</grammar>
