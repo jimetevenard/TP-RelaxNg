@@ -1,6 +1,6 @@
 # TP Relax NG
 
-Completer le fichier livres-init.rng pour valider le document livres.xml.
+Compléter le fichier `livres-init.rng` pour qu'il valide le document `livres.xml`.
 
 ### Execution : 
 
@@ -15,4 +15,4 @@ Completer le fichier livres-init.rng pour valider le document livres.xml.
 
 **Vérifier que des erreurs de validation sont bien levées.**
 
-Le répertoire *solution* contient le bon fichier rng (mais d'autres solutions sont possibles...)
+Le répertoire `solution/` contient un fichier rng valide. (mais d'autres solutions sont possibles...) 
